@@ -19,7 +19,7 @@ export const DestinationCard = ({ image, name, price }) => {
           component="img"
           src={image}
           alt={name}
-          sx={{ width: "100%", height: 180, objectFit: "cover" }}
+          sx={{ width: "100%", height: 250, objectFit: "cover", borderRadius: 3 }}
         />
         <CardContent
           sx={{

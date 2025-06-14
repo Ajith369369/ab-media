@@ -24,7 +24,7 @@ export const TourPackageCard = ({
           component="img"
           src={image}
           alt={name}
-          sx={{ width: "100%", height: 180, objectFit: "cover" }}
+          sx={{ width: "100%", height: 250, objectFit: "cover", borderRadius: 3 }}
         />
         <CardContent
           sx={{
@@ -41,7 +41,7 @@ export const TourPackageCard = ({
             variant="subtitle1"
             fontWeight="bold"
             color="#4fbcbc"
-            sx={{ textTransform: "uppercase" }}
+            sx={{ textTransform: "uppercase", mt: 3, mb: 2,}}
           >
             {name}
           </Typography>
