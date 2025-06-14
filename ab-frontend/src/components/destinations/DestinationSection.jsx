@@ -6,7 +6,7 @@ import {
   Pagination,
   Typography,
 } from "@mui/material";
-import { useState,useRef  } from "react";
+import { useRef, useState } from "react";
 import { useDestinations } from "../../hooks/useDestinations";
 import DestinationCard from "./DestinationCard";
 
@@ -30,7 +30,7 @@ export const DestinationSection = () => {
   const handleChange = (event, value) => {
     event.preventDefault(); // prevent default behavior, i.e., unwanted scroll to top
     setPage(value);
-    sectionRef.current?.scrollIntoView({ behavior: 'smooth' }); // scroll into view on page change
+    sectionRef.current?.scrollIntoView({ behavior: "smooth" }); // scroll into view on page change
   };
 
   return (
