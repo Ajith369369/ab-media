@@ -8,14 +8,6 @@ import {
 import { useDestinations } from "../../hooks/useDestinations";
 import DestinationCard from "./DestinationCard";
 
-const destinations = [
-  {
-    name: "Jammu & Kashmir",
-    image: "../../assets/images/kashmir.jpeg",
-    price: "₹4999/-",
-  },
-];
-
 export const DestinationSection = () => {
   const { data, isLoading, error } = useDestinations();
   console.log("useDestinations data: ", data);
