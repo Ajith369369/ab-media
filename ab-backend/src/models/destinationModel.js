@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 
 const destinationSchema = new mongoose.Schema({
+  destinationImage: {
+    type: String,
+    required: true,
+  },
   destinationName: {
     type: String,
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
 });

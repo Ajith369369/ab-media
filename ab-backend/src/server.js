@@ -3,8 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./database/connection");
 const destinationRoutes = require("./routes/destinationRoutes");
-const brandRoutes = require("./routes/brandRoutes");
-const productRoutes = require("./routes/productRoutes");
+const tourPackageRoutes = require("./routes/tourPackageRoutes");
 
 dotenv.config();
 
@@ -19,11 +18,9 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser()); // Before your routes
 
 app.use("/api", destinationRoutes); 
-app.use("/api", brandRoutes);
-app.use("/api", productRoutes);
+app.use("/api", tourPackageRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
