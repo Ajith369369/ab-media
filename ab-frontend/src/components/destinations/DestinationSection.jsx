@@ -1,11 +1,28 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
+import { useDestinations } from "../../hooks/useDestinations";
 import DestinationCard from "./DestinationCard";
 
 const destinations = [
-  { name: "Jammu & Kashmir", image: "../../assets/images/kashmir.jpeg", price: "₹4999/-" },
+  {
+    name: "Jammu & Kashmir",
+    image: "../../assets/images/kashmir.jpeg",
+    price: "₹4999/-",
+  },
 ];
 
 export const DestinationSection = () => {
+  const { data, isLoading, error } = useDestinations();
+  console.log("useDestinations data: ", data);
+
+  if (isLoading) return <CircularProgress />;
+  if (error) return <div>Error loading destinations</div>;
+
   return (
     <>
       <Box sx={{ py: 6, backgroundColor: "#f8f9fa" }}>
@@ -30,9 +47,13 @@ export const DestinationSection = () => {
           </Typography>
 
           <Grid container spacing={4}>
-            {destinations.map((dest, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <DestinationCard {...dest} />
+            {data.map((dest, index) => (
+              <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+                <DestinationCard
+                  name={dest.destinationName}
+                  image={dest.destinationImage}
+                  price={dest.price}
+                />
               </Grid>
             ))}
           </Grid>

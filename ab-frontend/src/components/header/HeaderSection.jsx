@@ -65,7 +65,7 @@ const HeaderSection = () => {
       >
         <Grid container justifyContent="center">
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={4} key={index} sx={{ textAlign: 'center' }}>
+            <Grid size={{ xs: 12, sm: 4 }} key={index} sx={{ textAlign: 'center' }}>
               <Box display="flex" alignItems="center" justifyContent="center" gap={1}>
                 {feature.icon}
                 <Typography variant="body1" fontWeight="medium">

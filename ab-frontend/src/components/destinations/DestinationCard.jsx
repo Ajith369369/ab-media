@@ -5,6 +5,7 @@ export const DestinationCard = ({ image, name, price }) => {
     <>
       <Card
         sx={{
+          height: '100%', // Fill the parent grid cell height
           borderRadius: 3,
           boxShadow: 3,
           overflow: "hidden",
